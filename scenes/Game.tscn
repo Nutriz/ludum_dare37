@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://scenes/Menu.tscn" type="PackedScene" id=1]
+
+[node name="Game" type="Node"]
+
+[node name="Menu" parent="." instance=ExtResource( 1 )]
+
+editor/display_folded = true
+
+[connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/ButtonPlay" to="Menu" method="_on_ButtonPlay_pressed"]
+
+[connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/ButtonQuit" to="Menu" method="_on_ButtonQuit_pressed"]
+
+
+[editable path="Menu"]
