@@ -18,6 +18,7 @@ var walk_speed = 3.5
 var jump_speed = 3
 
 var ray_length = 20
+var counter = 0
 
 func _ready():
 	set_process_input(true)
@@ -58,6 +59,8 @@ func shoot(event):
 		
 		var world = get_node("/root/World")
 		world.add_child(newBall)
+		counter += 1
+		world.get_node("TryCounter").set_text("Try : " + String(counter))
 		
 func _fixed_process(delta):
 	get_node("FPS").set_text(str(OS.get_frames_per_second(), " FPS"))
